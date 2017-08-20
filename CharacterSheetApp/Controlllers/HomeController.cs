@@ -1,3 +1,5 @@
+/* Basic =============================================== */
+
 using Microsoft.AspNet.Mvc;
 using System;
 
@@ -13,7 +15,7 @@ namespace CharacterSheetApp.Controllers
   }
 }
 
-/* Using the Equipment Model:
+/* Using the Equipment Model: =============================================== */
 
 using Microsoft.AspNet.Mvc;
 using CharacterSheetApp.Models;
@@ -30,4 +32,31 @@ namespace CharacterSheetApp.Controllers
       return View("Index", model);
     }
   }
-} */
+} 
+
+/* Getting User Input =============================================== */
+
+using Microsoft.AspNet.Mvc;
+using CharacterSheetApp.Models;
+using System;
+
+namespace CharacterSheetApp.Controllers
+{
+  public class HomeController : Controller
+  {
+    public IActionResult Index()
+    {
+      Equipment model = new Equipment();
+      model.Name = "Shield";
+      return View("Index", model);
+    }
+     
+    //create our Create Action here
+     public IActionResult Create(string EquipmentName)
+     {
+       var model = new CharacterSheetApp.Models.Equipment();
+       model.Name = EquipmentName;
+       return View(model);
+     }
+     
+  } 

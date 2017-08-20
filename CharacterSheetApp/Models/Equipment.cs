@@ -7,3 +7,4 @@ namespace CharacterSheetApp.Models
     public String Name;
   }
 }
+
