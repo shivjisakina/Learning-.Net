@@ -42,3 +42,27 @@
   </ul>
 </div>
 
+<!-- Retaining Data Using List(so it doesnt overwrite previous input)=============================================== -->
+
+@model List<CharacterSheetApp.Models.Equipment>
+<h2>Equipment:</h2>
+
+<form asp-action="Create" class="form-inline mbm">
+  <div class="form-group">
+    <input name="EquipmentName" class="form-control" />
+    <input class="btn" type="submit" value="Add Equipment" />
+  </div>
+</form>
+
+<h4>Equipment:</h4>
+
+<div>
+  <ul>
+    @foreach (var item in Model)
+    {
+    <li>
+      <label>@item.Name</label>
+    </li>
+    }
+  </ul>
+</div>
